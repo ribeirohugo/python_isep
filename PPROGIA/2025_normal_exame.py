@@ -1,3 +1,5 @@
+# Exame época Normal – 14/09/2025
+
 def criar_usernames(emails):
     return sorted(
         map(lambda e: e.split('@')[0].upper(), emails)

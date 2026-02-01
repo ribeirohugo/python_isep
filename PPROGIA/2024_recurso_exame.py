@@ -1,4 +1,5 @@
 # Exame época de recurso – 03/02/2025
+from functools import reduce
 
 def alunos_aprovados(notas):
     alunos_aprovados = list (
@@ -27,6 +28,13 @@ def alunos_aprovados_2(notas):
     print('Notas Arredondadas: ', notas_arredondadas)
 
 def produto_impares(numeros):
+    return reduce(
+        lambda x, y: x * y,
+        filter(lambda x: x % 2 != 0, numeros),
+        1
+    )
+
+def produto_impares2(numeros):
     impares = list(
         map(lambda x: x, filter(lambda x: x  % 2 != 0, numeros))
     )
@@ -52,6 +60,11 @@ def main():
     print('## Exercício 2 ##')
     numeros = [3, 8, 5, 10, 7, 2]
     result = produto_impares(numeros)
+    print('Produto Números Ímpares: ', result)
+
+    print('## Exercício 2 ##')
+    numeros = [3, 8, 5, 10, 7, 2]
+    result = produto_impares2(numeros)
     print('Produto Números Ímpares: ', result)
 
     print('## Exercício 2 ##')
